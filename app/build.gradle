@@ -141,7 +141,7 @@ dependencies {
                 parsersVersion = System.getProperty('parsersVersionOverride')
         }
 
-        implementation("com.github.mihonapp:kotatsu-parsers:$parsersVersion") {
+        implementation("com.github.YomiApp:kotatsu-parsers:$parsersVersion") {
                 exclude group: 'org.json', module: 'json'
                 transitive = true
         }
