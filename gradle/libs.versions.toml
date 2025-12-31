@@ -114,7 +114,7 @@ okhttp-dnsoverhttps = { module = "com.squareup.okhttp3:okhttp-dnsoverhttps", ver
 okhttp-tls = { module = "com.squareup.okhttp3:okhttp-tls", version.ref = "okhttp" }
 okio = { module = "com.squareup.okio:okio", version.ref = "okio" }
 ssiv = { module = "com.github.mihonapp:subsampling-scale-image-view", version.ref = "ssiv" }
-bitmap-kt = { module = "com.github.mihonapp:bitmap.kt", version.ref = "bitmap" }
+bitmap-kt = { module = "dev.mihon:bitmap-kt", version.ref = "bitmap" }
 workinspector = { module = "com.github.Koitharu:WorkInspector", version.ref = "workinspector" }
 androidx-window = { module = "androidx.window:window", version.ref = "window" }
 
