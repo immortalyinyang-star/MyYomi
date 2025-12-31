@@ -7,8 +7,6 @@ avifDecoder = "1.1.1.14d8e3c4"
 biometric = "1.4.0-alpha04"
 coil = "3.3.0"
 collections = "1.5.0"
-# https://github.com/google/conscrypt/issues/1268
-#noinspection NewerVersionAvailable,GradleDependency - 2.5.3 cause crashes
 conscrypt = "2.5.2"
 constraintlayout = "2.2.1"
 coreKtx = "1.17.0"
@@ -35,12 +33,13 @@ material = "1.14.0-alpha05"
 moshi = "1.15.2"
 okhttp = "5.2.1"
 okio = "3.16.1"
-parsers = "4d1e521aef"
+parsers = "main"
+ssiv = "main"
+bitmap = "1.1.1"
 preference = "1.2.1"
 recyclerview = "1.4.0"
 room = "2.7.2"
 serialization = "1.9.0"
-ssiv = "376930523c"
 swiperefreshlayout = "1.1.0"
 testRules = "1.7.0"
 testRunner = "1.7.0"
@@ -114,7 +113,8 @@ okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
 okhttp-dnsoverhttps = { module = "com.squareup.okhttp3:okhttp-dnsoverhttps", version.ref = "okhttp" }
 okhttp-tls = { module = "com.squareup.okhttp3:okhttp-tls", version.ref = "okhttp" }
 okio = { module = "com.squareup.okio:okio", version.ref = "okio" }
-ssiv = { module = "com.github.YomiApp:subsampling-scale-image-view", version.ref = "ssiv" }
+ssiv = { module = "com.github.mihonapp:subsampling-scale-image-view", version.ref = "ssiv" }
+bitmap-kt = { module = "com.github.mihonapp:bitmap.kt", version.ref = "bitmap" }
 workinspector = { module = "com.github.Koitharu:WorkInspector", version.ref = "workinspector" }
 androidx-window = { module = "androidx.window:window", version.ref = "window" }
 

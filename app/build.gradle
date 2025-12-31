@@ -141,10 +141,11 @@ dependencies {
                 parsersVersion = System.getProperty('parsersVersionOverride')
         }
 
-        implementation("com.github.YomiApp:kotatsu-parsers:$parsersVersion") {
+        implementation("com.github.mihonapp:kotatsu-parsers:$parsersVersion") {
                 exclude group: 'org.json', module: 'json'
                 transitive = true
         }
+        implementation libs.bitmap.kt
 
         coreLibraryDesugaring libs.desugar.jdk.libs
         implementation libs.kotlin.stdlib
