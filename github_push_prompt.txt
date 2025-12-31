@@ -1,0 +1,25 @@
+I'm trying to push an Android project from a Replit environment to a fresh GitHub repository, but I'm consistently getting the error: "remote: fatal: did not receive expected object" followed by "! [remote rejected] HEAD -> main (failed)".
+
+### Context:
+- **Environment**: Replit Shell (Linux)
+- **Project**: Large Android Kotlin codebase (Yomi/Kotatsu)
+- **Token**: Using a GitHub Personal Access Token (PAT) with full `repo` scopes.
+- **Git State**: Local branch is named `main`, and I've already tried `git add .` and `git commit`.
+
+### Commands used that failed:
+1. `git push origin main --force`
+2. `git gc --prune=now` followed by `git push`
+3. `git remote remove origin` -> `git remote add origin https://<TOKEN>@github.com/<USER>/<REPO>.git` -> `git push`
+
+### The Error:
+```text
+remote: Resolving deltas: 100% (652/652), done.
+remote: fatal: did not receive expected object f205c1b3dcb75b773faead36b2cd9d1464fc25fe
+error: remote unpack failed: index-pack failed
+To https://github.com/immortalyinyang-star/Yomi
+ ! [remote rejected] HEAD -> main (failed)
+error: failed to push some refs to 'https://github.com/immortalyinyang-star/Yomi'
+```
+
+### Request:
+Please provide a set of terminal commands to resolve this "expected object" mismatch and force the push to succeed, considering the environment might have limitations on large object transfers or shallow clones.

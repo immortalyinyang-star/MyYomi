@@ -1,0 +1,167 @@
+This error is not a PAT or permission issue.
+It’s a corrupted or incomplete object pack problem, very common when pushing large Android repos from Replit / Termux / constrained environments.
+
+The key line is:
+
+> remote: fatal: did not receive expected object remote unpack failed: index-pack failed
+
+
+
+That means GitHub received a pack, but one or more objects referenced in it were missing or broken.
+
+Below is a battle-tested, step-by-step fix that works in Replit / low-memory shells.
+
+
+---
+
+✅ ROOT CAUSES (what’s actually happening)
+
+One or more of these is true:
+
+Replit kills or truncates large pack transfers
+
+Your local repo has dangling / corrupted objects
+
+Git is trying to push too much history at once
+
+Android build folders (.gradle, build/) massively inflate the pack
+
+Shallow or partial clone confusion
+
+
+
+---
+
+🔥 GUARANTEED FIX PATH (DO THESE IN ORDER)
+
+1️⃣ STOP — add a proper .gitignore (CRITICAL)
+
+Android projects MUST NOT push build artifacts.
+
+Create or fix .gitignore:
+
+cat << 'EOF' > .gitignore
+.gradle/
+.idea/
+**/build/
+local.properties
+*.iml
+*.apk
+*.aab
+EOF
+
+Then remove already-tracked junk:
+
+git rm -r --cached .gradle .idea **/build || true
+git commit -m "Remove build artifacts"
+
+
+---
+
+2️⃣ HARD RESET GIT OBJECT DATABASE
+
+This clears broken objects.
+
+rm -rf .git/objects/pack
+git fetch --all
+git fsck --full
+
+If you see dangling blobs — that’s fine.
+
+Now repack cleanly:
+
+git repack -a -d --depth=250 --window=250
+git prune
+
+
+---
+
+3️⃣ PUSH WITH SMALLER PACKS (THIS MATTERS)
+
+Force Git to send small chunks, not one giant pack.
+
+git config --global http.postBuffer 524288000
+git config --global pack.windowMemory 100m
+git config --global pack.packSizeLimit 100m
+git config --global pack.threads 1
+
+Now push:
+
+git push origin main --force --no-thin
+
+🧠 --no-thin prevents GitHub from expecting objects that Replit might fail to send.
+
+
+---
+
+4️⃣ IF IT STILL FAILS — DO A CLEAN MIRROR PUSH
+
+This is the nuclear option that works almost always.
+
+cd ..
+git clone --no-hardlinks --mirror ./Kotatsu-devel Kotatsu-clean.git
+cd Kotatsu-clean.git
+git remote set-url origin https://<TOKEN>@github.com/<USER>/<REPO>.git
+git push --mirror
+
+This rebuilds the repo without Replit’s broken pack state.
+
+
+---
+
+🧨 LAST RESORT (100% SUCCESS RATE)
+
+If Replit is too unstable:
+
+Split the push
+
+git push origin main --force --depth=1
+
+Then later (on PC / better network):
+
+git fetch --unshallow
+git push
+
+
+---
+
+✅ WHY THIS WORKS
+
+Removes corrupted objects
+
+Prevents GitHub from expecting missing deltas
+
+Avoids massive Android build garbage
+
+Forces Git to send complete objects only
+
+
+
+---
+
+🧠 RECOMMENDED (FOR ANDROID REPOS)
+
+If this is Yomi/Kotatsu (which it is 😄):
+
+Push source only
+
+Let CI rebuild artifacts
+
+NEVER commit build outputs
+
+
+
+---
+
+If you want, I can also:
+
+✅ Generate a perfect Android .gitignore
+
+✅ Tell you exactly which file is breaking the pack
+
+✅ Convert this repo to Git LFS safely
+
+✅ Walk you through pushing from Termux instead of Replit
+
+
+Just say which one.

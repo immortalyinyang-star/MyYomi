@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary: Deep Teal/Cyan instead of Orange -->
+    <color name="yomi_primary">#006064</color>
+    <color name="yomi_onPrimary">#FFFFFF</color>
+    <color name="yomi_primaryContainer">#B2EBF2</color>
+    <color name="yomi_onPrimaryContainer">#001F20</color>
+
+    <!-- Secondary: Soft Purple -->
+    <color name="yomi_secondary">#4527A0</color>
+    <color name="yomi_onSecondary">#FFFFFF</color>
+    <color name="yomi_secondaryContainer">#D1C4E9</color>
+    <color name="yomi_onSecondaryContainer">#110826</color>
+
+    <!-- Tertiary: Slate/Blue Grey -->
+    <color name="yomi_tertiary">#37474F</color>
+    <color name="yomi_onTertiary">#FFFFFF</color>
+    <color name="yomi_tertiaryContainer">#CFD8DC</color>
+    <color name="yomi_onTertiaryContainer">#101C21</color>
+
+    <!-- Neutrals -->
+    <color name="yomi_surface">#FAFAFA</color>
+    <color name="yomi_onSurface">#1B1B1B</color>
+    <color name="yomi_outline">#757575</color>
+</resources>

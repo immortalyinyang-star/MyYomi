@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary: Deep Cyan/Teal -->
+    <color name="yomi_primary_dark">#4DD0E1</color>
+    <color name="yomi_onPrimary_dark">#00363A</color>
+    <color name="yomi_primaryContainer_dark">#004D40</color>
+    <color name="yomi_onPrimaryContainer_dark">#B2EBF2</color>
+
+    <!-- Secondary: Lavender -->
+    <color name="yomi_secondary_dark">#B39DDB</color>
+    <color name="yomi_onSecondary_dark">#311B92</color>
+    <color name="yomi_secondaryContainer_dark">#4527A0</color>
+    <color name="yomi_onSecondaryContainer_dark">#EDE7F6</color>
+
+    <!-- Surface -->
+    <color name="yomi_surface_dark">#121212</color>
+    <color name="yomi_onSurface_dark">#E1E1E1</color>
+</resources>

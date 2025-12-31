@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+        <!-- Base application theme. -->
+        <style name="Base.Theme.Yomi" parent="Theme.Material3.DayNight.NoActionBar">
+
+                <!-- Theme Colors -->
+                <item name="colorPrimary">@color/yomi_primary</item>
+                <item name="colorPrimaryContainer">@color/yomi_primaryContainer</item>
+                <item name="colorOnPrimary">@color/yomi_onPrimary</item>
+                <item name="colorOnPrimaryContainer">@color/yomi_onPrimaryContainer</item>
+                <item name="colorSecondary">@color/yomi_secondary</item>
+                <item name="colorSecondaryContainer">@color/yomi_secondaryContainer</item>
+                <item name="colorOnSecondary">@color/yomi_onSecondary</item>
+                <item name="colorOnSecondaryContainer">@color/yomi_onSecondaryContainer</item>
+                <item name="colorTertiary">@color/yomi_tertiary</item>
+                <item name="colorTertiaryContainer">@color/yomi_tertiaryContainer</item>
+                <item name="colorOnTertiary">@color/yomi_onTertiary</item>
+                <item name="colorOnTertiaryContainer">@color/yomi_onTertiaryContainer</item>
+                <item name="colorSurface">@color/yomi_surface</item>
+                <item name="colorOnSurface">@color/yomi_onSurface</item>
+                <item name="colorOutline">@color/yomi_outline</item>
+                <item name="colorOutlineVariant">@color/yomi_outline</item>
+
+                <!-- Customizations -->
+                <item name="android:windowBackground">@color/yomi_surface</item>
+
+                <!-- Drawables (icons) -->
+                <item name="actionModeCloseDrawable">@drawable/abc_ic_clear_material</item>
+                <item name="actionModeWebSearchDrawable">@drawable/abc_ic_search_api_material</item>
+                <item name="expandCollapseIndicator">@drawable/m3_split_button_chevron_avd</item>
+
+                <!-- Base attributes -->
+                <item name="android:windowLightStatusBar">@bool/light_status_bar</item>
+                <item name="android:statusBarColor">@android:color/transparent</item>
+                <item name="android:navigationBarColor">@color/dim</item>
+                <item name="android:navigationBarDividerColor" tools:targetApi="o_mr1">@null</item>
+                <item name="android:enforceNavigationBarContrast" tools:targetApi="Q">false</item>
+                <item name="android:enforceStatusBarContrast" tools:targetApi="Q">false</item>
+                <item name="windowActionModeOverlay">true</item>
+
+                <!-- System components styles -->
+                <item name="android:alertDialogTheme">@style/ThemeOverlay.Yomi.AlertDialog</item>
+                <item name="alertDialogTheme">@style/ThemeOverlay.Yomi.AlertDialog</item>
+                <item name="bottomSheetDialogTheme">@style/ThemeOverlay.Yomi.BottomSheetDialog</item>
+                <item name="sideSheetDialogTheme">@style/ThemeOverlay.Yomi.SideSheetDialog</item>
+                <item name="recyclerViewStyle">@style/Widget.Yomi.RecyclerView</item>
+                <item name="android:dropDownSpinnerStyle">@style/Widget.Yomi.Spinner.DropDown</item>
+                <item name="switchPreferenceCompatStyle">@style/Preference.SwitchPreferenceCompat.M3</item>
+                <item name="circularProgressIndicatorStyle">@style/Widget.Yomi.CircularProgressIndicator</item>
+                <item name="linearProgressIndicatorStyle">@style/Widget.Yomi.LinearProgressIndicator</item>
+                <item name="bottomSheetDragHandleStyle">@style/Widget.Yomi.BottomSheet.DragHandle</item>
+                <item name="preferenceTheme">@style/PreferenceThemeOverlay.Yomi</item>
+                <!-- Fix crash in A15 -->
+                <item name="actionButtonStyle">@style/Widget.AppCompat.ActionButton</item>
+
+                <!-- Custom views -->
+                <item name="fastScrollerStyle">@style/Widget.Yomi.FastScroller</item>
+                <item name="listItemTextViewStyle">@style/Widget.Yomi.ListItemTextView</item>
+                <item name="dotIndicatorStyle">@style/Widget.Yomi.DotIndicator</item>
+                <item name="badgeViewStyle">@style/Widget.Yomi.BadgeView</item>
+                <item name="coverImageViewStyle">@style/Widget.Yomi.ImageView.Cover</item>
+        </style>
+
+        <!--== Default Theme ==-->
+        <style name="Theme.Yomi" parent="Base.Theme.Yomi" />
+
+        <!-- Base ThemeOverlay -->
+        <style name="ThemeOverlay.Yomi" parent="ThemeOverlay.Material3.Light" />
+
+        <!-- Monet theme only support S+ -->
+        <style name="ThemeOverlay.Yomi.Monet" parent="ThemeOverlay.Material3.DynamicColors.Light" />
+
+        <!-- Expressive Monet theme -->
+        <style name="ThemeOverlay.Yomi.Expressive" parent="ThemeOverlay.Material3Expressive.DynamicColors.DayNight">
+                <item name="alertDialogTheme">@style/ThemeOverlay.Material3Expressive.Dialog.Alert</item>
+                <item name="materialAlertDialogTheme">@style/ThemeOverlay.Material3Expressive.MaterialAlertDialog</item>
+
+                <item name="appBarLayoutStyle">@style/Widget.Material3Expressive.AppBarLayout</item>
+                <item name="collapsingToolbarLayoutStyle">@style/Widget.Material3Expressive.CollapsingToolbar</item>
+                <item name="collapsingToolbarLayoutMediumStyle">@style/Widget.Material3Expressive.CollapsingToolbar.Medium
+                </item>
+                <item name="collapsingToolbarLayoutLargeStyle">@style/Widget.Material3Expressive.CollapsingToolbar.Large</item>
+
+                <item name="materialSearchBarStyle">@style/Widget.Material3Expressive.SearchBar</item>
+
+                <item name="floatingActionButtonStyle">@style/Widget.Material3Expressive.FloatingActionButton</item>
+                <item name="floatingActionButtonMediumStyle">@style/Widget.Material3Expressive.FloatingActionButton.Medium
+                </item>
+                <item name="floatingActionButtonLargeStyle">@style/Widget.Material3Expressive.FloatingActionButton.Large</item>
+
+                <item name="extendedFloatingActionButtonSmallStyle">
+                        @style/Widget.Material3Expressive.ExtendedFloatingActionButton.Small
+                </item>
+                <item name="extendedFloatingActionButtonMediumStyle">
+                        @style/Widget.Material3Expressive.ExtendedFloatingActionButton.Medium
+                </item>
+                <item name="extendedFloatingActionButtonLargeStyle">
+                        @style/Widget.Material3Expressive.ExtendedFloatingActionButton.Large
+                </item>
+
+                <item name="materialButtonStyle">@style/Widget.Material3Expressive.Button</item>
+                <item name="materialButtonTonalStyle">@style/Widget.Material3Expressive.Button.TonalButton</item>
+                <item name="materialButtonOutlinedStyle">@style/Widget.Material3Expressive.Button.OutlinedButton</item>
+                <item name="materialButtonElevatedStyle">@style/Widget.Material3Expressive.Button.ElevatedButton</item>
+                <item name="borderlessButtonStyle">@style/Widget.Material3Expressive.Button.TextButton</item>
+                <item name="buttonBarButtonStyle">@style/Widget.Material3Expressive.Button.TextButton.Dialog</item>
+                <item name="snackbarButtonStyle">@style/Widget.Material3Expressive.Button.TextButton.Snackbar</item>
+                <item name="materialIconButtonStyle">@style/Widget.Material3Expressive.Button.IconButton.Standard</item>
+                <item name="materialIconButtonOutlinedStyle">@style/Widget.Material3Expressive.Button.IconButton.Outlined</item>
+                <item name="materialIconButtonFilledStyle">@style/Widget.Material3Expressive.Button.IconButton.Filled</item>
+                <item name="materialIconButtonFilledTonalStyle">@style/Widget.Material3Expressive.Button.IconButton.Tonal</item>
+
+                <item name="materialButtonGroupStyle">@style/Widget.Material3Expressive.MaterialButtonGroup</item>
+                <item name="materialButtonToggleGroupStyle">@style/Widget.Material3Expressive.MaterialButtonToggleGroup</item>
+
+                <item name="bottomNavigationStyle">@style/Widget.Material3Expressive.BottomNavigationView</item>
+                <item name="navigationRailStyle">@style/Widget.Material3Expressive.NavigationRailView</item>
+
+                <item name="toolbarStyle">@style/Widget.Material3Expressive.Toolbar</item>
+                <item name="toolbarSurfaceStyle">@style/Widget.Material3Expressive.Toolbar.Surface</item>
+
+                <item name="linearProgressIndicatorStyle">@style/Widget.Material3Expressive.LinearProgressIndicator</item>
+                <item name="circularProgressIndicatorStyle">@style/Widget.Material3Expressive.CircularProgressIndicator</item>
+
+                <item name="sliderStyle">@style/Widget.Material3Expressive.Slider.Xsmall</item>
+
+                <item name="collapsingToolbarLayoutMediumSize">@dimen/m3_comp_app_bar_medium_flexible_container_height</item>
+                <item name="collapsingToolbarLayoutLargeSize">@dimen/m3_comp_app_bar_large_flexible_container_height</item>
+
+                <item name="actionBarSize">@dimen/m3_comp_app_bar_small_container_height</item>
+
+                <item name="dynamicColorThemeOverlay">@style/ThemeOverlay.Material3Expressive.DynamicColors.DayNight</item>
+        </style>
+
+        <!-- Changes only for night -->
+        <style name="ThemeOverlay.Yomi.Amoled" parent="" />
+
+        <!-- App Widgets -->
+
+        <style name="Theme.Yomi.AppWidgetContainer" parent="@style/Theme.MaterialComponents.Light">
+                <item name="android:colorBackground">@color/kotatsu_background</item>
+                <item name="android:panelColorBackground">@color/kotatsu_primaryContainer</item>
+        </style>
+</resources>
